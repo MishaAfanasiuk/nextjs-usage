@@ -48,13 +48,16 @@ describe('Cars Controller', () => {
     httpServer = app.getHttpServer();
   });
 
+  afterAll(() => app.close());
+
+
   it('should be defined', () => {
-    expect(app).toBeDefined();
+    return expect(app).toBeDefined();
   });
 
   // Manufacturer
 
-  it('/POST manufacturer', async () => {
+  it('/POST manufacturer', () => {
     return request(httpServer)
       .post('/manufacturer')
       .send(manufacturerPostMock)
@@ -92,7 +95,7 @@ describe('Cars Controller', () => {
 
   // Cars
 
-  it('/POST cars', async () => {
+  it('/POST cars', () => {
     return request(app.getHttpServer())
       .post('/cars')
       .send(carPostMock)
@@ -102,7 +105,7 @@ describe('Cars Controller', () => {
       .expect(createCarResponseMock)
   });
 
-  it('/PUT cars', async () => {
+  it('/PUT cars', () => {
     return request(app.getHttpServer())
       .put('/cars/1')
       .send(carPutMock)
@@ -114,7 +117,7 @@ describe('Cars Controller', () => {
 
   // Owners
 
-  it('/POST Owner', async () => {
+  it('/POST Owner', () => {
     return request(httpServer)
       .post('/owners')
       .send(ownerPostMock)
@@ -137,6 +140,7 @@ describe('Cars Controller', () => {
   it('/GET Owners', () => {
     return request(httpServer)
       .get('/owners')
+      .expect(200)
       .expect([updatedOwnerResponseMock])
   });
 
@@ -153,5 +157,5 @@ describe('Cars Controller', () => {
       .get('/cars/1/manufacturer')
       .expect(200)
       .expect(updatedManufacturer)
-  })
+  });
 });
