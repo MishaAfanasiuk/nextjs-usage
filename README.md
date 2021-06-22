@@ -1,4 +1,4 @@
-# Example of nest js application
+# Example of Nest.js application
 
 ### To run application clone this repository and exec next commands
 
