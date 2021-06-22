@@ -1,4 +1,4 @@
-# Light IT test task
+# Example of nest js application
 
 ### To run application clone this repository and exec next commands
 
@@ -10,9 +10,9 @@
 ### To execute end to end tests
 * npm run test:e2e
 
-### Task description:
+### Description:
 
-This coding exercise consists in implementing a little backend micro-service which aims to serve the cars data.
+This is a little backend micro-service which aims to serve the cars data.
 This component will expose a REST api providing CRUD operations to fetch one or several cars, create, update and
 delete a car. Though this api, it will also be possible:
 
@@ -26,7 +26,7 @@ The car data model will be kept relatively simple (Figure 1).
 
 ![Db relations](./assets/db-relations.png)
 
-The application has to be configured to run in a Docker container.Moreover, the expected (and mandatory) program-
+The application has to be configured to run in a Docker container. Moreover, the expected (and mandatory) program-
 ming paradigm to respect is the OOP (oriented-object programming).
 The language to use will be Typescript and the framework Nestjs (https://nestjs.com/).
 Code source will be delivered through a personal github account.
